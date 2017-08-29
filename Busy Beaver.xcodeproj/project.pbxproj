@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6657C5291F4B6AB50020CC39 /* Instruction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6657C5271F4B6AB50020CC39 /* Instruction.cpp */; };
+		6657C52C1F4B6D9B0020CC39 /* BusyBeaverProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6657C52A1F4B6D9B0020CC39 /* BusyBeaverProgram.cpp */; };
 		66AA40641F2FC6B0000DC2AB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66AA40631F2FC6B0000DC2AB /* main.cpp */; };
+		66AA406D1F2FC74E000DC2AB /* TuringMachine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66AA406B1F2FC74E000DC2AB /* TuringMachine.cpp */; };
+		66C9D5F21F55DE9800763383 /* TwoStateBusyBeaver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66C9D5F01F55DE9800763383 /* TwoStateBusyBeaver.cpp */; };
+		66C9D5F51F55FD3D00763383 /* FourStateBusyBeaver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66C9D5F31F55FD3D00763383 /* FourStateBusyBeaver.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +28,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6657C5271F4B6AB50020CC39 /* Instruction.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Instruction.cpp; sourceTree = "<group>"; };
+		6657C5281F4B6AB50020CC39 /* Instruction.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Instruction.hpp; sourceTree = "<group>"; };
+		6657C52A1F4B6D9B0020CC39 /* BusyBeaverProgram.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BusyBeaverProgram.cpp; sourceTree = "<group>"; };
+		6657C52B1F4B6D9B0020CC39 /* BusyBeaverProgram.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BusyBeaverProgram.hpp; sourceTree = "<group>"; };
 		66AA40601F2FC6B0000DC2AB /* Busy Beaver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Busy Beaver"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66AA40631F2FC6B0000DC2AB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		66AA406B1F2FC74E000DC2AB /* TuringMachine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TuringMachine.cpp; sourceTree = "<group>"; };
+		66AA406C1F2FC74E000DC2AB /* TuringMachine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TuringMachine.hpp; sourceTree = "<group>"; };
+		66C9D5F01F55DE9800763383 /* TwoStateBusyBeaver.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TwoStateBusyBeaver.cpp; sourceTree = "<group>"; };
+		66C9D5F11F55DE9800763383 /* TwoStateBusyBeaver.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TwoStateBusyBeaver.hpp; sourceTree = "<group>"; };
+		66C9D5F31F55FD3D00763383 /* FourStateBusyBeaver.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FourStateBusyBeaver.cpp; sourceTree = "<group>"; };
+		66C9D5F41F55FD3D00763383 /* FourStateBusyBeaver.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FourStateBusyBeaver.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +56,7 @@
 		66AA40571F2FC6B0000DC2AB = {
 			isa = PBXGroup;
 			children = (
-				66AA40621F2FC6B0000DC2AB /* Busy Beaver */,
+				66AA40621F2FC6B0000DC2AB /* src */,
 				66AA40611F2FC6B0000DC2AB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +69,30 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		66AA40621F2FC6B0000DC2AB /* Busy Beaver */ = {
+		66AA40621F2FC6B0000DC2AB /* src */ = {
 			isa = PBXGroup;
 			children = (
+				66AA406A1F2FC709000DC2AB /* Model */,
 				66AA40631F2FC6B0000DC2AB /* main.cpp */,
 			);
-			path = "Busy Beaver";
+			path = src;
+			sourceTree = "<group>";
+		};
+		66AA406A1F2FC709000DC2AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				66AA406C1F2FC74E000DC2AB /* TuringMachine.hpp */,
+				6657C5281F4B6AB50020CC39 /* Instruction.hpp */,
+				6657C52B1F4B6D9B0020CC39 /* BusyBeaverProgram.hpp */,
+				66C9D5F11F55DE9800763383 /* TwoStateBusyBeaver.hpp */,
+				66C9D5F41F55FD3D00763383 /* FourStateBusyBeaver.hpp */,
+				66AA406B1F2FC74E000DC2AB /* TuringMachine.cpp */,
+				6657C5271F4B6AB50020CC39 /* Instruction.cpp */,
+				6657C52A1F4B6D9B0020CC39 /* BusyBeaverProgram.cpp */,
+				66C9D5F01F55DE9800763383 /* TwoStateBusyBeaver.cpp */,
+				66C9D5F31F55FD3D00763383 /* FourStateBusyBeaver.cpp */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,7 +151,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66C9D5F21F55DE9800763383 /* TwoStateBusyBeaver.cpp in Sources */,
+				66AA406D1F2FC74E000DC2AB /* TuringMachine.cpp in Sources */,
 				66AA40641F2FC6B0000DC2AB /* main.cpp in Sources */,
+				6657C52C1F4B6D9B0020CC39 /* BusyBeaverProgram.cpp in Sources */,
+				66C9D5F51F55FD3D00763383 /* FourStateBusyBeaver.cpp in Sources */,
+				6657C5291F4B6AB50020CC39 /* Instruction.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,7 +169,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -159,7 +197,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -177,6 +215,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
 			};
 			name = Debug;
 		};
@@ -186,7 +225,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -214,7 +253,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -225,20 +264,25 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
 			};
 			name = Release;
 		};
 		66AA40681F2FC6B0000DC2AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
 			};
 			name = Debug;
 		};
 		66AA40691F2FC6B0000DC2AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
 			};
 			name = Release;
 		};
