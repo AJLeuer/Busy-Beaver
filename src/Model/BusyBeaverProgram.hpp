@@ -37,7 +37,7 @@ public:
     BusyBeaverProgram(const map<TuringMachine::State, array<Instruction, 2>> & instructionsTable) :
         instructionsTable(instructionsTable) {}
 
-    void run(TuringMachine & tm) override;
+    void execute(TuringMachine & tm) override;
 
 };
 
