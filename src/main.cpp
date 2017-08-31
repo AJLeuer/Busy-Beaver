@@ -19,9 +19,9 @@ int main(int argc, const char * argv[]) {
 
     TuringMachine tm;
     
-    BusyBeaverProgram * twoStateBusyBeaver = new FourStateBusyBeaver();
+    BusyBeaverProgram * busyBeaver = new FourStateBusyBeaver();
     
-    tm.run(* twoStateBusyBeaver);
+    tm.run(* busyBeaver);
     
     tm.writeTapeToOutput(std::cout);
     
