@@ -8,7 +8,7 @@
 
 #include "BusyBeaverProgram.hpp"
 
-void BusyBeaverProgram::run(TuringMachine & tm) {
+void BusyBeaverProgram::execute(TuringMachine & tm) {
     
     auto & instructionsForCurrentState = instructionsTable.at(tm.getState());
     

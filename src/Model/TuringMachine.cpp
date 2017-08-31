@@ -62,7 +62,7 @@ void TuringMachine::reset() {
 
 void TuringMachine::run(Program & program) {
     while (getState() != State::HALT) {
-        program.run(* this);
+        program.execute(* this);
         programCounter++;
     }
 }

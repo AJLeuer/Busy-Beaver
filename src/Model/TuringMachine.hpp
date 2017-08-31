@@ -95,7 +95,7 @@ public:
 
 class Program {
 public:
-    virtual void run(TuringMachine & tm) = 0;
+    virtual void execute(TuringMachine & tm) = 0;
 };
 
 #endif /* TuringMachine_hpp */
