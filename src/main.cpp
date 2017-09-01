@@ -20,7 +20,7 @@ int main(int argc, const char * argv[]) {
     
     BusyBeaverProgram * busyBeaver = new FourStateBusyBeaver();
     
-    tm.run(* busyBeaver);
+    tm.load(* busyBeaver);
     
     tm.writeTapeToOutput(std::cout);
     

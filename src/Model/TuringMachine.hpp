@@ -75,7 +75,7 @@ public:
     
     void reset();
     
-    void run(Program & program);
+    void load(Program & program);
     
     void writeSymbolToTape(char symbol);
     
@@ -105,7 +105,7 @@ public:
 
 class Program {
 public:
-    virtual void execute(TuringMachine & tm) = 0;
+    virtual void run(TuringMachine & tm) = 0;
 };
 
 #endif /* TuringMachine_hpp */

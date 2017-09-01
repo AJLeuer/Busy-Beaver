@@ -60,9 +60,9 @@ void TuringMachine::reset() {
     * this = TuringMachine();
 }
 
-void TuringMachine::run(Program & program) {
+void TuringMachine::load(Program & program) {
     while (getState() != State::HALT) {
-        program.execute(* this);
+        program.run(* this);
         programCounter++;
     }
 }
