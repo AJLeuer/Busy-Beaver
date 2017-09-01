@@ -35,6 +35,9 @@ public:
         LEFT = -1
     };
     
+    /**
+     * Represents the possible states of the Turing Machine
+     */
     enum class State : char32_t {
         A = 'A',
         B = 'B',
@@ -42,6 +45,13 @@ public:
         D = 'D',
         E = 'E',
         F = 'F',
+        /**
+         * Signifies that the Turing Machine's state should remain unchanged
+         */
+        UNCHANGED = u'␀',
+        /**
+         * Signifies that the Turing Machine should halt
+         */
         HALT = u'␄'
     } state;
     
@@ -77,6 +87,12 @@ public:
     
     void load(Program & program);
     
+    /**
+     * Executes the given instruction. One execution cycle can do up to three things (writing a new symbol, moving the head,
+     * and setting the new state), but only moving the head is guarunteed to occur. If the symbolToPrint equals the null character (0x00),
+     * symbolToPrint is treated as a NOP and the symbol under the head is left unchanged. If the newState is equal to UNCHANGED (or its underlying
+     * representation, ␀), newState is treated as a NOP and the machine state is left unchanged
+     */
     void execute(const Instruction & instruction);
     
     State getState() const { return this->state; }

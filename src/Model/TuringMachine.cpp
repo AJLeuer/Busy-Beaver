@@ -68,11 +68,16 @@ void TuringMachine::load(Program & program) {
 }
 
 void TuringMachine::execute(const TuringMachine::Instruction & instruction) {
-    writeSymbolToTape(instruction.symbolToPrint);
+    
+    if (instruction.symbolToPrint != 0x00) {
+        writeSymbolToTape(instruction.symbolToPrint);
+    }
     
     moveHead(instruction.directionToMove);
     
-    setState(instruction.newState);
+    if (instruction.newState != State::UNCHANGED) {
+        setState(instruction.newState);
+    }
 }
 
 void TuringMachine::writeSymbolToTape(char symbol) {
