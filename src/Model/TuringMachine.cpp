@@ -67,6 +67,14 @@ void TuringMachine::load(Program & program) {
     }
 }
 
+void TuringMachine::execute(const TuringMachine::Instruction & instruction) {
+    writeSymbolToTape(instruction.symbolToPrint);
+    
+    moveHead(instruction.directionToMove);
+    
+    setState(instruction.newState);
+}
+
 void TuringMachine::writeSymbolToTape(char symbol) {
     * currentHeadPosition = symbol;
     

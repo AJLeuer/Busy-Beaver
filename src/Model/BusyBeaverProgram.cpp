@@ -16,9 +16,5 @@ void BusyBeaverProgram::run(TuringMachine & tm) {
     
     TuringMachine::Instruction & instruction = instructionsForCurrentState.at(currentSymbol);
     
-    tm.writeSymbolToTape(instruction.symbolToPrint);
-    
-    tm.moveHead(instruction.directionToMove);
-    
-    tm.setState(instruction.newState);
+    tm.execute(instruction);
 }
