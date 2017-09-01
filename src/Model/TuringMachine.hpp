@@ -84,11 +84,11 @@ public:
      */
     void moveHead(DirectionToMove direction);
     
-    inline unsigned long getProgramCounterValue() { return this->programCounter ; }
+    void setState(State state) { this->state = state; }
     
     State getState() const { return this->state; }
     
-    void setState(State state) { this->state = state; }
+    inline unsigned long getProgramCounterValue() { return this->programCounter ; }
     
     char getSymbolAtCurrentPosition() const { return * currentHeadPosition ; }
     
