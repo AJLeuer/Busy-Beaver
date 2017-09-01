@@ -23,6 +23,13 @@ class TuringMachine {
     
 public:
     
+    /**
+     * The tape represents the Turing Machine's memory. It is theoretically unbounded in both directions (though obviously in the real world we're limited
+     * by the amount of physical memory we have available). The tape is divided into squares or cell, each of which can contain a single character. The
+     * read/write head of the Turing Machine moves along the tape one cell at a time.
+     */
+    vector<char> tape;
+    
     enum class DirectionToMove : short {
         RIGHT = 1,
         LEFT = -1
@@ -38,12 +45,15 @@ public:
         HALT = u'␄'
     } state;
     
-    /**
-     * The tape represents the Turing Machine's memory. It is theoretically unbounded in both directions (though obviously in the real world we're limited
-     * by the amount of physical memory we have available). The tape is divided into squares or cell, each of which can contain a single character. The
-     * read/write head of the Turing Machine moves along the tape one cell at a time.
-     */
-    vector<char> tape;
+    struct Instruction {
+        
+        char symbolToPrint;
+        
+        DirectionToMove directionToMove;
+        
+        State newState;
+        
+    };
     
     unsigned long programCounter;
     
@@ -86,7 +96,7 @@ public:
      * Writes the symbol from every cell on the tape that has been modified so far (ignores all the untouched squares), starting from
      * the lowest-indexed cell on the left to the highest index on the right
      *
-     * @param output The output stream to write
+     * @param outputStream The output stream to write
      * @param padding How far outside the highest and lowest values written on the tape to read from. By default this is two.
      */
     void writeTapeToOutput(ostream & outputStream, unsigned padding = 2);

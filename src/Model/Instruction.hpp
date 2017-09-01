@@ -13,13 +13,9 @@
 
 #include "TuringMachine.hpp"
 
-struct Instruction {
-    
-    char symbolToPrint;
-    
-    TuringMachine::DirectionToMove directionToMove;
-    
-    TuringMachine::State newState;
+
+
+class InstructionTable {
     
 };
 

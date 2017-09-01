@@ -4,7 +4,6 @@
 //
 //  Created by Adam J Leuer on 7/31/17.
 //  Copyright © 2017 Adam J Leuer. All rights reserved.
-//
 
 #include <iostream>
 

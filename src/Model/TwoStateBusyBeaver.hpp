@@ -21,7 +21,7 @@ class TwoStateBusyBeaver : public BusyBeaverProgram {
 
 protected:
     
-    const static map<TuringMachine::State, array<Instruction, 2>> defaultInstructionTable;
+    const static map<TuringMachine::State, array<TuringMachine::Instruction, 2>> defaultInstructionTable;
     
 public:
     

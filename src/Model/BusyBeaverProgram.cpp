@@ -14,7 +14,7 @@ void BusyBeaverProgram::execute(TuringMachine & tm) {
     
     unsigned currentSymbol = tm.getSymbolAtCurrentPosition() - '0'; //either zero or one
     
-    Instruction & instruction = instructionsForCurrentState.at(currentSymbol);
+    TuringMachine::Instruction & instruction = instructionsForCurrentState.at(currentSymbol);
     
     tm.writeSymbolToTape(instruction.symbolToPrint);
     
