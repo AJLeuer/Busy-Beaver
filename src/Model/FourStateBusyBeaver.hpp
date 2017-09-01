@@ -13,6 +13,9 @@
 
 #include "BusyBeaverProgram.hpp"
 
+using Instruction = TuringMachine::Instruction;
+using State = TuringMachine::State;
+
 /**
  * This is an implementation of the busy beaver program that was proven to run the maximum number of steps possible for a 4-state machine
  */
@@ -20,7 +23,7 @@ class FourStateBusyBeaver : public BusyBeaverProgram {
     
 protected:
     
-    const static map<TuringMachine::State, array<TuringMachine::Instruction, 2>> defaultInstructionTable;
+    const static map<State, array<Instruction, 2>> defaultInstructionTable;
     
 public:
     

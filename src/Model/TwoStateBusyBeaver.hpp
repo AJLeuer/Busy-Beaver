@@ -14,6 +14,9 @@
 
 #include "BusyBeaverProgram.hpp"
 
+using Instruction = TuringMachine::Instruction;
+using State = TuringMachine::State;
+
 /**
  * An example Busy Beaver program with two-states and a complete instruction table
  */
@@ -21,7 +24,7 @@ class TwoStateBusyBeaver : public BusyBeaverProgram {
 
 protected:
     
-    const static map<TuringMachine::State, array<TuringMachine::Instruction, 2>> defaultInstructionTable;
+    const static map<State, array<Instruction, 2>> defaultInstructionTable;
     
 public:
     

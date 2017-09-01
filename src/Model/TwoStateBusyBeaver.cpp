@@ -10,12 +10,12 @@
 
 using namespace std;
 
-using State = TuringMachine::State;
+using State = State;
 using Direction = TuringMachine::DirectionToMove;
 
 
-const std::map<TuringMachine::State, array<TuringMachine::Instruction, 2>> TwoStateBusyBeaver::defaultInstructionTable {
-    { State::A, array<TuringMachine::Instruction, 2>{ TuringMachine::Instruction{'1', Direction::RIGHT, State::B}, TuringMachine::Instruction{'1', Direction::LEFT, State::B}} },
-    { State::B, array<TuringMachine::Instruction, 2>{ TuringMachine::Instruction{'1', Direction::LEFT, State::A}, TuringMachine::Instruction{'1', Direction::RIGHT, State::HALT} }}
+const std::map<State, array<Instruction, 2>> TwoStateBusyBeaver::defaultInstructionTable {
+    { State::A, array<Instruction, 2>{ Instruction{'1', Direction::RIGHT, State::B}, Instruction{'1', Direction::LEFT, State::B}} },
+    { State::B, array<Instruction, 2>{ Instruction{'1', Direction::LEFT, State::A}, Instruction{'1', Direction::RIGHT, State::HALT} }}
 } ;
 

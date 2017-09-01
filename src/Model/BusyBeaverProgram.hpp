@@ -19,6 +19,11 @@
 
 using namespace std;
 
+using Instruction = TuringMachine::Instruction;
+using Direction = TuringMachine::DirectionToMove;
+using State = TuringMachine::State;
+
+
 class BusyBeaverProgram : public Program {
 
 private:
@@ -28,13 +33,13 @@ private:
      * read when the symbol at the current tape position is '0' (found at index zero of the instructions), and one for when the current symbol is
      * '1'.
      */
-    map<TuringMachine::State, array<TuringMachine::Instruction, 2>>  instructionsTable;
+    map<State, array<Instruction, 2>>  instructionsTable;
 
     unsigned int programCounter = 0;
 
 public:
 
-    BusyBeaverProgram(const map<TuringMachine::State, array<TuringMachine::Instruction, 2>> & instructionsTable) :
+    BusyBeaverProgram(const map<State, array<Instruction, 2>> & instructionsTable) :
         instructionsTable(instructionsTable) {}
 
     void execute(TuringMachine & tm) override;
