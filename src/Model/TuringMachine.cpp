@@ -18,7 +18,7 @@ TuringMachine::TuringMachine() :
     lowestTapePositionWritten(),
     highestTapePositionWritten()
 {
-    tape = vector<char>(/* 65536 */ 64, '0'); //Tape starts out with each each symbol zeroed out...
+    tape = vector<char>(65536, '0'); //Tape starts out with each each symbol zeroed out...
     initializePositionMarkers();
 }
 
