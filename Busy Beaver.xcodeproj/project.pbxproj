@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6657C5291F4B6AB50020CC39 /* Instruction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6657C5271F4B6AB50020CC39 /* Instruction.cpp */; };
-		6657C52C1F4B6D9B0020CC39 /* BusyBeaverProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6657C52A1F4B6D9B0020CC39 /* BusyBeaverProgram.cpp */; };
 		66AA40641F2FC6B0000DC2AB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66AA40631F2FC6B0000DC2AB /* main.cpp */; };
 		66AA406D1F2FC74E000DC2AB /* TuringMachine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66AA406B1F2FC74E000DC2AB /* TuringMachine.cpp */; };
 		66C9D5F21F55DE9800763383 /* TwoStateBusyBeaver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66C9D5F01F55DE9800763383 /* TwoStateBusyBeaver.cpp */; };
@@ -28,9 +26,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6657C5271F4B6AB50020CC39 /* Instruction.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Instruction.cpp; sourceTree = "<group>"; };
-		6657C5281F4B6AB50020CC39 /* Instruction.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Instruction.hpp; sourceTree = "<group>"; };
-		6657C52A1F4B6D9B0020CC39 /* BusyBeaverProgram.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BusyBeaverProgram.cpp; sourceTree = "<group>"; };
 		6657C52B1F4B6D9B0020CC39 /* BusyBeaverProgram.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BusyBeaverProgram.hpp; sourceTree = "<group>"; };
 		66AA40601F2FC6B0000DC2AB /* Busy Beaver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Busy Beaver"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66AA40631F2FC6B0000DC2AB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -82,13 +77,10 @@
 			isa = PBXGroup;
 			children = (
 				66AA406C1F2FC74E000DC2AB /* TuringMachine.hpp */,
-				6657C5281F4B6AB50020CC39 /* Instruction.hpp */,
 				6657C52B1F4B6D9B0020CC39 /* BusyBeaverProgram.hpp */,
 				66C9D5F11F55DE9800763383 /* TwoStateBusyBeaver.hpp */,
 				66C9D5F41F55FD3D00763383 /* FourStateBusyBeaver.hpp */,
 				66AA406B1F2FC74E000DC2AB /* TuringMachine.cpp */,
-				6657C5271F4B6AB50020CC39 /* Instruction.cpp */,
-				6657C52A1F4B6D9B0020CC39 /* BusyBeaverProgram.cpp */,
 				66C9D5F01F55DE9800763383 /* TwoStateBusyBeaver.cpp */,
 				66C9D5F31F55FD3D00763383 /* FourStateBusyBeaver.cpp */,
 			);
@@ -154,9 +146,7 @@
 				66C9D5F21F55DE9800763383 /* TwoStateBusyBeaver.cpp in Sources */,
 				66AA406D1F2FC74E000DC2AB /* TuringMachine.cpp in Sources */,
 				66AA40641F2FC6B0000DC2AB /* main.cpp in Sources */,
-				6657C52C1F4B6D9B0020CC39 /* BusyBeaverProgram.cpp in Sources */,
 				66C9D5F51F55FD3D00763383 /* FourStateBusyBeaver.cpp in Sources */,
-				6657C5291F4B6AB50020CC39 /* Instruction.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

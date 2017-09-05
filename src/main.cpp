@@ -20,9 +20,7 @@ int main(int argc, const char * argv[]) {
     
     BusyBeaverProgram * busyBeaver = new FourStateBusyBeaver();
     
-    tm.load(* busyBeaver);
-    
-    tm.writeTapeToOutput(std::cout);
+    tm.run(* busyBeaver, & cout);
     
     cout << "Program counter: " << tm.getProgramCounterValue() << endl;
     

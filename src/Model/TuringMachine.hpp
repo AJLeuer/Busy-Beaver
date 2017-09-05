@@ -11,8 +11,10 @@
 
 #include <iostream>
 #include <vector>
+#include <array>
 #include <thread>
 #include <sstream>
+#include <map>
 
 using namespace std;
 
@@ -81,11 +83,26 @@ public:
     
     ~TuringMachine();
     
-    void initializePositionMarkers();
-    
     void reset();
     
-    void load(Program & program);
+    void run (Program & program, ostream * outputStream = nullptr);
+    
+    /**
+     * Writes the symbol from every cell on the tape that has been modified so far (ignores all the untouched squares), starting from
+     * the lowest-indexed cell on the left to the highest index on the right
+     *
+     * @param outputStream The output stream to write
+     * @param padding How far outside the highest and lowest values written on the tape to read from. By default this is two.
+     */
+    void writeTapeToOutput(ostream & outputStream, unsigned padding = 2);
+    
+    inline unsigned long getProgramCounterValue() { return this->programCounter ; }
+    
+    
+protected:
+    
+    void initializePositionMarkers();
+    
     
     /**
      * Executes the given instruction. One execution cycle can do up to three things (writing a new symbol, moving the head,
@@ -97,21 +114,10 @@ public:
     
     State getState() const { return this->state; }
     
-    inline unsigned long getProgramCounterValue() { return this->programCounter ; }
-    
-    char getSymbolAtCurrentPosition() const { return * currentHeadPosition ; }
-    
     /**
-     * Writes the symbol from every cell on the tape that has been modified so far (ignores all the untouched squares), starting from
-     * the lowest-indexed cell on the left to the highest index on the right
-     *
-     * @param outputStream The output stream to write
-     * @param padding How far outside the highest and lowest values written on the tape to read from. By default this is two.
+     * @return The current symbol
      */
-    void writeTapeToOutput(ostream & outputStream, unsigned padding = 2);
-    
-    
-protected:
+    char getSymbolUnderHead() const { return * currentHeadPosition ; }
     
     void writeSymbolToTape(char symbol);
     
@@ -124,9 +130,40 @@ protected:
     
 };
 
+/**
+ * The instructions table contains map entries for each possible state ('A', 'B', 'C', etc.). Each map entry in turn contains two instructions, one to
+ * read when the symbol at the current tape position is '0' (found at index zero of the instructions), and one for when the current symbol is
+ * '1'.
+ */
+struct InstructionTable {
+    
+    using Instruction = TuringMachine::Instruction;
+    using State = TuringMachine::State;
+    
+    map<State, array<Instruction, 2>>  instructions;
+    
+    InstructionTable(const map<State, array<Instruction, 2>> & instructions) : instructions(instructions) {}
+    
+    const Instruction & getInstructionsForStateAndSymbol(const State state, const char symbol) const ;
+    
+protected:
+    
+    const array<Instruction, 2> & getInstructionsForState(const State state) const ;
+    
+};
+
 class Program {
+    
+private:
+    
+    InstructionTable instructionTable;
+    
 public:
-    virtual void run(TuringMachine & tm) = 0;
+    
+    Program(const InstructionTable & instructionTable) :
+        instructionTable(instructionTable) {}
+    
+    const InstructionTable & getInstructionTable() const { return instructionTable; }
 };
 
 #endif /* TuringMachine_hpp */

@@ -11,8 +11,8 @@
 using namespace std;
 
 TuringMachine::TuringMachine() :
-    state(State::A), //Always starts in state 'A'
     tape(),
+    state(State::A), //Always starts in state 'A'
     programCounter(0),
     currentHeadPosition(),
     lowestTapePositionWritten(),
@@ -23,8 +23,8 @@ TuringMachine::TuringMachine() :
 }
 
 TuringMachine::TuringMachine(const TuringMachine & turingMachine) :
-    state(turingMachine.getState()),
     tape(turingMachine.tape),
+    state(turingMachine.getState()),
     programCounter(turingMachine.programCounter)
 {
     initializePositionMarkers();
@@ -32,18 +32,17 @@ TuringMachine::TuringMachine(const TuringMachine & turingMachine) :
 
 TuringMachine & TuringMachine::operator = (const TuringMachine & other) {
     if (this != & other) {
-        this->state = other.getState();
         this->tape = other.tape;
+        this->state = other.getState();
         this->programCounter = other.programCounter;
         initializePositionMarkers();
     }
     return * this;
 }
 
-TuringMachine::~TuringMachine()
-{
-    state = State::A;
+TuringMachine::~TuringMachine() {
     tape = vector<char>{};
+    state = State::A;
     programCounter = 0;
     currentHeadPosition = vector<char>::iterator();
     lowestTapePositionWritten = vector<char>::iterator();
@@ -60,14 +59,23 @@ void TuringMachine::reset() {
     * this = TuringMachine();
 }
 
-void TuringMachine::load(Program & program) {
+void TuringMachine::run(Program & program, ostream * outputStream) {
+    
     while (getState() != State::HALT) {
-        program.run(* this);
+        const Instruction & currentInstruction =
+            program.getInstructionTable().getInstructionsForStateAndSymbol(this->getState(), this->getSymbolUnderHead());
+        
+        execute(currentInstruction);
+        
         programCounter++;
+        
+        if (outputStream != nullptr) {
+            writeTapeToOutput(* outputStream);
+        }
     }
 }
 
-void TuringMachine::execute(const TuringMachine::Instruction & instruction) {
+void TuringMachine::execute(const Instruction & instruction) {
     
     if (instruction.symbolToPrint != 0x00) {
         writeSymbolToTape(instruction.symbolToPrint);
@@ -116,6 +124,16 @@ void TuringMachine::writeTapeToOutput(ostream & outputStream, unsigned padding) 
         outputStream <<  output.str() << ' ' ;
     }
     outputStream << endl ;
+}
+
+const TuringMachine::Instruction & InstructionTable::getInstructionsForStateAndSymbol(const State state, const char symbol) const {
+    unsigned symbolAsIndex = symbol - '0';
+    return getInstructionsForState(state).at(symbolAsIndex);
+}
+
+
+const array<TuringMachine::Instruction, 2> & InstructionTable::getInstructionsForState(const State state) const {
+    return instructions.at(state);
 }
 
 
