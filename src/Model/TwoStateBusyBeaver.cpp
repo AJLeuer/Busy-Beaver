@@ -10,7 +10,7 @@
 
 using namespace std;
 
-using State = State;
+
 using Direction = TuringMachine::DirectionToMove;
 
 

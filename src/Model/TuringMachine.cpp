@@ -16,7 +16,8 @@ TuringMachine::TuringMachine() :
     programCounter(0),
     currentHeadPosition(),
     lowestTapePositionWritten(),
-    highestTapePositionWritten()
+    highestTapePositionWritten(),
+	timer()
 {
     tape = vector<char>(65536, '0'); //Tape starts out with each each symbol zeroed out...
     initializePositionMarkers();
@@ -60,7 +61,7 @@ void TuringMachine::reset() {
 }
 
 void TuringMachine::run(Program & program, ostream * outputStream) {
-    
+	startTimer();
     while (getState() != State::HALT) {
         const Instruction & currentInstruction =
             program.getInstructionTable().getInstructionsForStateAndSymbol(this->getState(), this->getSymbolUnderHead());
@@ -73,6 +74,7 @@ void TuringMachine::run(Program & program, ostream * outputStream) {
             writeTapeToOutput(* outputStream);
         }
     }
+	stopTimer(*outputStream);
 }
 
 void TuringMachine::execute(const Instruction & instruction) {
@@ -109,6 +111,9 @@ void TuringMachine::moveHead(TuringMachine::DirectionToMove direction) {
 }
 
 void TuringMachine::writeTapeToOutput(ostream & outputStream, unsigned padding) {
+	if (ConsoleOutputEnabled == false) {
+		return;
+	}
     outputStream << "Program output: " ;
     for (auto symbolIterator = (lowestTapePositionWritten - padding); symbolIterator <= (highestTapePositionWritten + padding); symbolIterator++) {
         
@@ -124,6 +129,21 @@ void TuringMachine::writeTapeToOutput(ostream & outputStream, unsigned padding) 
         outputStream <<  output.str() << ' ' ;
     }
     outputStream << endl ;
+}
+
+
+void TuringMachine::startTimer() {
+	if (TimerEnabled) {
+		timer.startTimer();
+	}
+}
+
+void TuringMachine::stopTimer(ostream & outputStream) {
+	if (TimerEnabled) {
+		std::chrono::nanoseconds timeElapsed = timer.stopTimer();
+
+		outputStream << "Time taken to halt, in nanoseconds: " << timeElapsed.count() << endl;
+	}
 }
 
 const TuringMachine::Instruction & InstructionTable::getInstructionsForStateAndSymbol(const State state, const char symbol) const {

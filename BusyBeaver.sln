@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27705.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BusyBeaver", "BusyBeaver.vcxproj", "{B0E2826D-55D7-4823-B64D-241011E800E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0E2826D-55D7-4823-B64D-241011E800E6}.Debug|x64.ActiveCfg = Debug|x64
+		{B0E2826D-55D7-4823-B64D-241011E800E6}.Debug|x64.Build.0 = Debug|x64
+		{B0E2826D-55D7-4823-B64D-241011E800E6}.Release|x64.ActiveCfg = Debug|x64
+		{B0E2826D-55D7-4823-B64D-241011E800E6}.Release|x64.Build.0 = Debug|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6473215C-DDE5-4828-8EB1-0E01B2030814}
+	EndGlobalSection
+EndGlobal

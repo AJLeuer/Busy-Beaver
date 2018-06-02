@@ -1,4 +1,4 @@
-//
+﻿//
 //  TuringMachine.hpp
 //  Busy Beaver
 //
@@ -15,6 +15,10 @@
 #include <thread>
 #include <sstream>
 #include <map>
+
+#include "../Config.h"
+#include "../Util/Timer.hpp"
+
 
 using namespace std;
 
@@ -50,11 +54,11 @@ public:
         /**
          * Signifies that the Turing Machine's state should remain unchanged
          */
-        UNCHANGED = u'␀',
+        UNCHANGED = U'␀',
         /**
          * Signifies that the Turing Machine should halt
          */
-        HALT = u'␄'
+        HALT = U'␄'
     } state;
     
     struct Instruction {
@@ -74,6 +78,8 @@ public:
     vector<char>::iterator lowestTapePositionWritten;
     
     vector<char>::iterator highestTapePositionWritten;
+
+	Timer timer;
     
     TuringMachine();
     
@@ -127,6 +133,9 @@ protected:
     void moveHead(DirectionToMove direction);
     
     void setState(State state) { this->state = state; }
+
+	void startTimer();
+	void stopTimer(ostream & outputStream);
     
 };
 
