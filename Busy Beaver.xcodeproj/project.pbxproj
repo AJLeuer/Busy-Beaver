@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66062F4C20C2486800D3BA1E /* FiveStateBusyBeaver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66062F4B20C2486800D3BA1E /* FiveStateBusyBeaver.cpp */; };
+		66062F5320C248F900D3BA1E /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66062F4F20C248A400D3BA1E /* Util.cpp */; };
+		66062F5420C2490200D3BA1E /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66062F5020C248A400D3BA1E /* Timer.cpp */; };
 		66AA40641F2FC6B0000DC2AB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66AA40631F2FC6B0000DC2AB /* main.cpp */; };
 		66AA406D1F2FC74E000DC2AB /* TuringMachine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66AA406B1F2FC74E000DC2AB /* TuringMachine.cpp */; };
 		66C9D5F21F55DE9800763383 /* TwoStateBusyBeaver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66C9D5F01F55DE9800763383 /* TwoStateBusyBeaver.cpp */; };
@@ -26,6 +29,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		66062F4B20C2486800D3BA1E /* FiveStateBusyBeaver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FiveStateBusyBeaver.cpp; sourceTree = "<group>"; };
+		66062F4D20C2488500D3BA1E /* FiveStateBusyBeaver.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FiveStateBusyBeaver.hpp; sourceTree = "<group>"; };
+		66062F4F20C248A400D3BA1E /* Util.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Util.cpp; sourceTree = "<group>"; };
+		66062F5020C248A400D3BA1E /* Timer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
+		66062F5120C248A400D3BA1E /* Timer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Timer.hpp; sourceTree = "<group>"; };
+		66062F5220C248A400D3BA1E /* Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		6657C52B1F4B6D9B0020CC39 /* BusyBeaverProgram.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BusyBeaverProgram.hpp; sourceTree = "<group>"; };
 		668D38CE1F5F14BE00068DF8 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		66AA40601F2FC6B0000DC2AB /* Busy Beaver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Busy Beaver"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +58,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		66062F4E20C248A400D3BA1E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				66062F5220C248A400D3BA1E /* Util.h */,
+				66062F4F20C248A400D3BA1E /* Util.cpp */,
+				66062F5120C248A400D3BA1E /* Timer.hpp */,
+				66062F5020C248A400D3BA1E /* Timer.cpp */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		66AA40571F2FC6B0000DC2AB = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +89,7 @@
 		66AA40621F2FC6B0000DC2AB /* src */ = {
 			isa = PBXGroup;
 			children = (
+				66062F4E20C248A400D3BA1E /* Util */,
 				66AA406A1F2FC709000DC2AB /* Model */,
 				66AA40631F2FC6B0000DC2AB /* main.cpp */,
 			);
@@ -79,12 +100,14 @@
 			isa = PBXGroup;
 			children = (
 				66AA406C1F2FC74E000DC2AB /* TuringMachine.hpp */,
+				66AA406B1F2FC74E000DC2AB /* TuringMachine.cpp */,
 				6657C52B1F4B6D9B0020CC39 /* BusyBeaverProgram.hpp */,
 				66C9D5F11F55DE9800763383 /* TwoStateBusyBeaver.hpp */,
 				66C9D5F41F55FD3D00763383 /* FourStateBusyBeaver.hpp */,
-				66AA406B1F2FC74E000DC2AB /* TuringMachine.cpp */,
+				66062F4D20C2488500D3BA1E /* FiveStateBusyBeaver.hpp */,
 				66C9D5F01F55DE9800763383 /* TwoStateBusyBeaver.cpp */,
 				66C9D5F31F55FD3D00763383 /* FourStateBusyBeaver.cpp */,
+				66062F4B20C2486800D3BA1E /* FiveStateBusyBeaver.cpp */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -115,7 +138,7 @@
 		66AA40581F2FC6B0000DC2AB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Adam J Leuer";
 				TargetAttributes = {
 					66AA405F1F2FC6B0000DC2AB = {
@@ -145,10 +168,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66062F5320C248F900D3BA1E /* Util.cpp in Sources */,
+				66062F5420C2490200D3BA1E /* Timer.cpp in Sources */,
 				66C9D5F21F55DE9800763383 /* TwoStateBusyBeaver.cpp in Sources */,
 				66AA406D1F2FC74E000DC2AB /* TuringMachine.cpp in Sources */,
-				66AA40641F2FC6B0000DC2AB /* main.cpp in Sources */,
+				66062F4C20C2486800D3BA1E /* FiveStateBusyBeaver.cpp in Sources */,
 				66C9D5F51F55FD3D00763383 /* FourStateBusyBeaver.cpp in Sources */,
+				66AA40641F2FC6B0000DC2AB /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +195,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -176,6 +203,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -225,6 +253,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -232,6 +261,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -264,6 +294,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
 			};
@@ -273,6 +304,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
 			};

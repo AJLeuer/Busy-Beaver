@@ -19,7 +19,7 @@ TuringMachine::TuringMachine() :
     highestTapePositionWritten(),
 	timer()
 {
-    tape = vector<char>(65536, '0'); //Tape starts out with each each symbol zeroed out...
+    tape = vector<char>(tapeSize, '0'); //Tape starts out with each each symbol zeroed out...
     initializePositionMarkers();
 }
 
@@ -64,7 +64,7 @@ void TuringMachine::run(Program & program, ostream * outputStream) {
 	startTimer();
     while (getState() != State::HALT) {
         const Instruction & currentInstruction =
-            program.getInstructionTable().getInstructionsForStateAndSymbol(this->getState(), this->getSymbolUnderHead());
+            program.getInstructionsForStateAndSymbol(getState(), getSymbolUnderHead());
         
         execute(currentInstruction);
         
@@ -74,7 +74,7 @@ void TuringMachine::run(Program & program, ostream * outputStream) {
             writeTapeToOutput(* outputStream);
         }
     }
-	stopTimer(*outputStream);
+	stopTimer(* outputStream);
 }
 
 void TuringMachine::execute(const Instruction & instruction) {

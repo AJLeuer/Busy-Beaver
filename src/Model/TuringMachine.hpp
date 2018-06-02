@@ -102,7 +102,7 @@ public:
      */
     void writeTapeToOutput(ostream & outputStream, unsigned padding = 2);
     
-    inline unsigned long getProgramCounterValue() { return this->programCounter ; }
+    inline unsigned long getProgramCounterValue() const { return this->programCounter ; }
     
     
 protected:
@@ -112,7 +112,7 @@ protected:
     
     /**
      * Executes the given instruction. One execution cycle can do up to three things (writing a new symbol, moving the head,
-     * and setting the new state), but only moving the head is guarunteed to occur. If the symbolToPrint equals the null character (0x00),
+     * and setting the new state), but only moving the head is guaranteed to occur. If the symbolToPrint equals the null character (0x00),
      * symbolToPrint is treated as a NOP and the symbol under the head is left unchanged. If the newState is equal to UNCHANGED (or its underlying
      * representation, ␀), newState is treated as a NOP and the machine state is left unchanged
      */
@@ -171,8 +171,11 @@ public:
     
     Program(const InstructionTable & instructionTable) :
         instructionTable(instructionTable) {}
-    
-    const InstructionTable & getInstructionTable() const { return instructionTable; }
+
+	const TuringMachine::Instruction & getInstructionsForStateAndSymbol(const TuringMachine::State state, const char symbol) const
+    {
+	    return instructionTable.getInstructionsForStateAndSymbol(state, symbol);
+    }
 };
 
 #endif /* TuringMachine_hpp */
