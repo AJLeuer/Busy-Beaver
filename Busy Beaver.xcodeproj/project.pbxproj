@@ -37,6 +37,7 @@
 		66062F5220C248A400D3BA1E /* Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		6657C52B1F4B6D9B0020CC39 /* BusyBeaverProgram.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BusyBeaverProgram.hpp; sourceTree = "<group>"; };
 		668D38CE1F5F14BE00068DF8 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		6698696820C2B0B700C4A515 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		66AA40601F2FC6B0000DC2AB /* Busy Beaver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Busy Beaver"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66AA40631F2FC6B0000DC2AB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		66AA406B1F2FC74E000DC2AB /* TuringMachine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TuringMachine.cpp; sourceTree = "<group>"; };
@@ -91,6 +92,7 @@
 			children = (
 				66062F4E20C248A400D3BA1E /* Util */,
 				66AA406A1F2FC709000DC2AB /* Model */,
+				6698696820C2B0B700C4A515 /* Config.h */,
 				66AA40631F2FC6B0000DC2AB /* main.cpp */,
 			);
 			path = src;
